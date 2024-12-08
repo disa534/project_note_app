@@ -1,0 +1,29 @@
+/* static/css/styles.css */
+
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Формы */
+form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Кнопки */
+.btn {
+    min-width: 120px;
+}
+
+/* Список заметок */
+.list-group-item {
+    transition: background-color 0.3s;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}

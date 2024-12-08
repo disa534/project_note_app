@@ -1,0 +1,24 @@
+<!-- templates/notes.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Мои Заметки - Заметки{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Мои Заметки</h2>
+    <a href="{{ url_for('create_note') }}" class="btn btn-success">Создать Заметку</a>
+</div>
+
+{% if notes %}
+    <div class="list-group">
+        {% for note in notes %}
+            <a href="{{ url_for('view_note', note_id=note.id) }}" class="list-group-item list-group-item-action">
+                {{ note.title }}
+            </a>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>У вас еще нет заметок. <a href="{{ url_for('create_note') }}">Создать первую заметку</a>.</p>
+{% endif %}
+{% endblock %}

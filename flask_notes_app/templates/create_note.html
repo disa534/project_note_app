@@ -1,0 +1,25 @@
+<!-- templates/create_note.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Создать Заметку - Заметки{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="mb-4">Создать Новую Заметку</h2>
+        <form method="POST" action="{{ url_for('create_note') }}">
+            <div class="mb-3">
+                <label for="title" class="form-label">Название</label>
+                <input type="text" class="form-control" id="title" name="title" required maxlength="255">
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Содержимое</label>
+                <textarea class="form-control" id="content" name="content" rows="10" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Создать</button>
+            <a href="{{ url_for('notes') }}" class="btn btn-secondary">Отмена</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
